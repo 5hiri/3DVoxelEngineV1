@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "3DGraphicsEngineV1.exe"
+			"path" : "3DVoxelEngineV1.exe"
 		},
 		{
-			"path" : "3DGraphicsEngineV1.pdb"
+			"path" : "3DVoxelEngineV1.pdb"
 		}
 	],
 	"backtrace" : 2,
@@ -84,14 +84,14 @@
 				},
 				{
 					"backtrace" : 5,
-					"define" : "SHADER_DIR=\"C:/Users/Salva/OneDrive/Documents/GitHub/3DGraphicsEngineV1/shaders\""
+					"define" : "SHADER_DIR=\"C:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1/shaders\""
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 6,
-					"path" : "C:/Users/Salva/OneDrive/Documents/GitHub/3DGraphicsEngineV1/glad/include"
+					"path" : "C:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1/glad/include"
 				},
 				{
 					"backtrace" : 3,
@@ -128,14 +128,14 @@
 				},
 				{
 					"backtrace" : 5,
-					"define" : "SHADER_DIR=\"C:/Users/Salva/OneDrive/Documents/GitHub/3DGraphicsEngineV1/shaders\""
+					"define" : "SHADER_DIR=\"C:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1/shaders\""
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 6,
-					"path" : "C:/Users/Salva/OneDrive/Documents/GitHub/3DGraphicsEngineV1/glad/include"
+					"path" : "C:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1/glad/include"
 				},
 				{
 					"backtrace" : 3,
@@ -150,7 +150,7 @@
 			]
 		}
 	],
-	"id" : "3DGraphicsEngineV1::@6890427a1f51a3e7e1df",
+	"id" : "3DVoxelEngineV1::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -180,8 +180,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "3DGraphicsEngineV1",
-	"nameOnDisk" : "3DGraphicsEngineV1.exe",
+	"name" : "3DVoxelEngineV1",
+	"nameOnDisk" : "3DVoxelEngineV1.exe",
 	"paths" : 
 	{
 		"build" : ".",

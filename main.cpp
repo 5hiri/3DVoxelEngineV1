@@ -62,7 +62,7 @@ int main() {
 #endif
 
     // create a window
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Voxel Engine", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(1200, 800, "Voxel Engine", nullptr, nullptr);
     if (window == nullptr) {
         std::cerr << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -184,7 +184,7 @@ int main() {
     glEnableVertexAttribArray(1);
 
     // set viewport and callback
-    glViewport(0, 0, 800, 600);
+    glViewport(0, 0, 1200, 800);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     // Register Mouse Callback
@@ -212,7 +212,7 @@ int main() {
 
         // Set up the transformation matrices
         glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-        glm::mat4 projection = glm::perspective(glm::radians(90.0f), (float)800/600, 0.1f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(90.0f), (float)1200/800, 0.1f, 100.0f);
         glm::mat4 model = glm::mat4(1.0f);
 
         unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
