@@ -15,15 +15,6 @@
 ########################
 
 //Value Computed by CMake
-3DGraphicsEngineV1_BINARY_DIR:STATIC=C:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1/cmake-build-debug
-
-//Value Computed by CMake
-3DGraphicsEngineV1_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-3DGraphicsEngineV1_SOURCE_DIR:STATIC=C:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1
-
-//Value Computed by CMake
 3DVoxelEngineV1_BINARY_DIR:STATIC=C:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1/cmake-build-debug
 
 //Value Computed by CMake
@@ -131,7 +122,7 @@ CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Users/Salva/OneDrive/Documents/GitHub
 CMAKE_GNUtoMS:BOOL=OFF
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/3DGraphicsEngineV1
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/3DVoxelEngineV1
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/Program Files/JetBrains/CLion 2024.2.1/bin/mingw/bin/ld.exe
@@ -286,7 +277,7 @@ VCPKG_PREFER_SYSTEM_LIBS:BOOL=OFF
 VCPKG_SETUP_CMAKE_PROGRAM_PATH:BOOL=ON
 
 //Vcpkg target triplet (ex. x86-windows)
-VCPKG_TARGET_TRIPLET:STRING=x64-windows
+VCPKG_TARGET_TRIPLET:STRING=x64-mingw-dynamic
 
 //Trace calls to find_package()
 VCPKG_TRACE_FIND_PACKAGE:BOOL=OFF
@@ -306,9 +297,6 @@ X_VCPKG_APPLOCAL_DEPS_SERIALIZED:BOOL=OFF
 Z_VCPKG_BUILTIN_POWERSHELL_PATH:FILEPATH=C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
 
 //Path to a program.
-Z_VCPKG_CL:FILEPATH=Z_VCPKG_CL-NOTFOUND
-
-//Path to a program.
 Z_VCPKG_PWSH_PATH:FILEPATH=Z_VCPKG_PWSH_PATH-NOTFOUND
 
 //The directory which contains the installed libraries for each
@@ -316,10 +304,13 @@ Z_VCPKG_PWSH_PATH:FILEPATH=Z_VCPKG_PWSH_PATH-NOTFOUND
 _VCPKG_INSTALLED_DIR:PATH=C:/Users/Salva/.vcpkg-clion/vcpkg/installed
 
 //The directory containing a CMake configuration file for glfw3.
-glfw3_DIR:PATH=C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3
+glfw3_DIR:PATH=C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/share/glfw3
 
 //The directory containing a CMake configuration file for glm.
-glm_DIR:PATH=C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-windows/share/glm
+glm_DIR:PATH=C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/share/glm
+
+//The directory containing a CMake configuration file for imgui.
+imgui_DIR:PATH=C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/share/imgui
 
 
 ########################

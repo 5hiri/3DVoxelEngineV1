@@ -8,6 +8,8 @@ add_executable(3DVoxelEngineV1
         main.cpp
         # Add other source files ehre
         glad/src/glad.c
+        Cube.h
+        Cube.cpp
 )
 
 # Include directories
@@ -25,3 +27,6 @@ target_link_libraries(3DVoxelEngineV1 PRIVATE glfw)
 
 find_package(glm CONFIG REQUIRED)
 target_link_libraries(3DVoxelEngineV1 PRIVATE glm::glm)
+
+find_package(imgui CONFIG REQUIRED)
+target_link_libraries(3DVoxelEngineV1 PRIVATE imgui::imgui)

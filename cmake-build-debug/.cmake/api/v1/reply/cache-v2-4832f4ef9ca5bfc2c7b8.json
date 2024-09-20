@@ -2,42 +2,6 @@
 	"entries" : 
 	[
 		{
-			"name" : "3DGraphicsEngineV1_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1/cmake-build-debug"
-		},
-		{
-			"name" : "3DGraphicsEngineV1_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "3DGraphicsEngineV1_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1"
-		},
-		{
 			"name" : "3DVoxelEngineV1_BINARY_DIR",
 			"properties" : 
 			[
@@ -743,7 +707,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/3DGraphicsEngineV1"
+			"value" : "C:/Program Files (x86)/3DVoxelEngineV1"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1475,7 +1439,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "x64-windows"
+			"value" : "x64-mingw-dynamic"
 		},
 		{
 			"name" : "VCPKG_TRACE_FIND_PACKAGE",
@@ -1554,18 +1518,6 @@
 			"value" : "OFF"
 		},
 		{
-			"name" : "Z_VCPKG_CL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "Z_VCPKG_CL-NOTFOUND"
-		},
-		{
 			"name" : "Z_VCPKG_POWERSHELL_PATH",
 			"properties" : 
 			[
@@ -1635,7 +1587,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3"
+			"value" : "C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/share/glfw3"
 		},
 		{
 			"name" : "glm_DIR",
@@ -1647,7 +1599,19 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-windows/share/glm"
+			"value" : "C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/share/glm"
+		},
+		{
+			"name" : "imgui_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for imgui."
+				}
+			],
+			"type" : "PATH",
+			"value" : "C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/share/imgui"
 		}
 	],
 	"kind" : "cache",
