@@ -10,6 +10,8 @@ add_executable(3DVoxelEngineV1
         glad/src/glad.c
         Cube.h
         Cube.cpp
+        Frustum.cpp
+        Frustum.h
 )
 
 # Include directories

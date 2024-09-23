@@ -73,6 +73,14 @@ build CMakeFiles/3DVoxelEngineV1.dir/Cube.cpp.obj: CXX_COMPILER__3DVoxelEngineV1
   OBJECT_DIR = CMakeFiles\3DVoxelEngineV1.dir
   OBJECT_FILE_DIR = CMakeFiles\3DVoxelEngineV1.dir
 
+build CMakeFiles/3DVoxelEngineV1.dir/Frustum.cpp.obj: CXX_COMPILER__3DVoxelEngineV1_unscanned_Debug C$:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1/Frustum.cpp || cmake_object_order_depends_target_3DVoxelEngineV1
+  DEFINES = -DGLFW_DLL -DSHADER_DIR=\"C:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1/shaders\"
+  DEP_FILE = CMakeFiles\3DVoxelEngineV1.dir\Frustum.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Salva/OneDrive/Documents/GitHub/3DVoxelEngineV1/glad/include -isystem C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/include
+  OBJECT_DIR = CMakeFiles\3DVoxelEngineV1.dir
+  OBJECT_FILE_DIR = CMakeFiles\3DVoxelEngineV1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target 3DVoxelEngineV1
@@ -81,7 +89,7 @@ build CMakeFiles/3DVoxelEngineV1.dir/Cube.cpp.obj: CXX_COMPILER__3DVoxelEngineV1
 #############################################
 # Link the executable 3DVoxelEngineV1.exe
 
-build 3DVoxelEngineV1.exe: CXX_EXECUTABLE_LINKER__3DVoxelEngineV1_Debug CMakeFiles/3DVoxelEngineV1.dir/main.cpp.obj CMakeFiles/3DVoxelEngineV1.dir/glad/src/glad.c.obj CMakeFiles/3DVoxelEngineV1.dir/Cube.cpp.obj | C$:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/lib/libglm.a C$:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/lib/libimguid.a C$:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/lib/libglfw3dll.a
+build 3DVoxelEngineV1.exe: CXX_EXECUTABLE_LINKER__3DVoxelEngineV1_Debug CMakeFiles/3DVoxelEngineV1.dir/main.cpp.obj CMakeFiles/3DVoxelEngineV1.dir/glad/src/glad.c.obj CMakeFiles/3DVoxelEngineV1.dir/Cube.cpp.obj CMakeFiles/3DVoxelEngineV1.dir/Frustum.cpp.obj | C$:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/lib/libglm.a C$:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/lib/libimguid.a C$:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/lib/libglfw3dll.a
   FLAGS = -g
   LINK_LIBRARIES = C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/lib/libglm.a  C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/lib/libimguid.a  C:/Users/Salva/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/lib/libglfw3dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\3DVoxelEngineV1.dir

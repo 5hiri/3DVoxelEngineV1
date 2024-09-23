@@ -15,6 +15,7 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include <array>
+#include "Frustum.h"
 
 // Function prototypes
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -112,9 +113,9 @@ struct Chunk {
 
 void buildTestCubeTree(CubeHandler& cubeHandler, int maxDepth);
 void buildCubeTree(CubeHandler& cubeHandler, int maxDepth);
-void renderCubes(CubeHandler& cubeHandler, unsigned int shaderProgram, int& n);
+void renderCubes(CubeHandler& cubeHandler, unsigned int shaderProgram, int& n, const Frustum& frustum);
 void generateChunk(Chunk& chunk);
-void renderChunk(Chunk& chunk, unsigned int shaderProgram, int& n);
+void renderChunk(Chunk& chunk, unsigned int shaderProgram, int& n, const Frustum& frustum);
 
 int main() {
     // std::cout << "Current working directory: " << std::filesystem::current_path() << std::endl;
@@ -236,6 +237,9 @@ int main() {
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330 core");
 
+    Frustum frustum;
+    float frustumMargin = 0.9f; // Adjust this value as needed
+
     // Render loop
     while (!glfwWindowShouldClose(window)) {
         int cubeNum = 0;
@@ -269,6 +273,9 @@ int main() {
         glm::mat4 projection = glm::perspective(glm::radians(fov), static_cast<float>(1200)/800, 0.1f, 100.0f);
         //glm::mat4 model = glm::mat4(1.0f);
 
+        // Update the frustum
+        frustum.update(projection * view, frustumMargin);
+
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
@@ -282,7 +289,7 @@ int main() {
         //     cube.draw(shaderProgram);
         // }
         // renderCubes(root, shaderProgram, cubeNum);
-        renderChunk(rootChunk, shaderProgram, cubeNum);
+        renderChunk(rootChunk, shaderProgram, cubeNum, frustum);
 
         // Create an ImGui window to display stats
         ImGui::SetNextWindowPos(ImVec2(10, 10)); // Position at (10,10)
@@ -477,18 +484,26 @@ void buildTestCubeTree(CubeHandler& cubeHandler, int maxDepth) {
 }
 
 
-void renderCubes(CubeHandler& cubeHandler, unsigned int shaderProgram, int& n) {
+void renderCubes(CubeHandler& cubeHandler, unsigned int shaderProgram, int& n, const Frustum& frustum) {
     if (cubeHandler.isSplit) {
         // Traverse and render child cubes
         for (auto child : cubeHandler.children) {
             if (child != nullptr) {
-                renderCubes(*child, shaderProgram, n);
+                // Check if the child's bounding box is in the frustum
+                glm::vec3 childMin = child->cube.position - (child->size / 2.0f);
+                glm::vec3 childMax = child->cube.position + (child->size / 2.0f);
+                if (frustum.isAABBInFrustum(childMin, childMax)) {
+                    renderCubes(*child, shaderProgram, n, frustum);
+                }
             }
         }
     } else {
-        // Render the cube
-        cubeHandler.cube.draw(shaderProgram);
-        n++;
+        // Check if the cube is in the frustum before rendering
+        if (frustum.isPointInFrustum(cubeHandler.cube.position)) {
+            // Render the cube
+            cubeHandler.cube.draw(shaderProgram);
+            n++;
+        }
     }
 }
 
@@ -521,14 +536,22 @@ void generateChunk(Chunk& chunk) {
     }
 }
 
-void renderChunk(Chunk& chunk, unsigned int shaderProgram, int& n) {
+void renderChunk(Chunk& chunk, unsigned int shaderProgram, int& n, const Frustum& frustum) {
+    glm::vec3 chunkMin(chunk.x, chunk.y, chunk.z);
+    glm::vec3 chunkMax(chunk.x + CHUNK_SIZE, chunk.y + CHUNK_SIZE, chunk.z + CHUNK_SIZE);
+
+    // Check if the entire chunk is in the frustum
+    if (!frustum.isAABBInFrustum(chunkMin, chunkMax)) {
+        return; // Skip this chunk if its not in the frustum
+    }
+
     for (auto layer : chunk.layers) {
         if (layer != nullptr) {
             for (int x = 0; x < CHUNK_SIZE; x++) {
                 for (int z = 0; z < CHUNK_SIZE; z++) {
                     CubeHandler* cube = layer->cubes[x][z];
                     if (cube != nullptr) {
-                        renderCubes(*cube, shaderProgram, n);
+                        renderCubes(*cube, shaderProgram, n, frustum);
                     }
                 }
             }
