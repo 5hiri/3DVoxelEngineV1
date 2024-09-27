@@ -40,7 +40,7 @@ float pitch = 0.0f;
 float lastX = 400, lastY = 300;
 bool firstMouse = true;
 
-const int CHUNK_SIZE = 8; // Adjust this value as needed
+const int CHUNK_SIZE = 10; // Adjust this value as needed
 
 void checkOpenGLError(const char* stmt, const char* fname, const int line)
 {
